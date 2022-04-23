@@ -1,0 +1,248 @@
+ZADANIE 2 - Настройка имени и электронной почты коммитера (допустил ошибку из-за невнимательности и указал неверное имя пользователя (по ТЗ это фамилия+имя на русском, у меня было только имя на английском; ИСПРАВЛЕНО)
+
+jija@jija-VirtualBox:~$ sudo apt-get update
+[sudo] пароль для jija: 
+Сущ:1 http://ru.archive.ubuntu.com/ubuntu xenial InRelease
+Сущ:2 http://ru.archive.ubuntu.com/ubuntu xenial-updates InRelease             
+Сущ:3 http://ru.archive.ubuntu.com/ubuntu xenial-backports InRelease           
+Сущ:4 http://security.ubuntu.com/ubuntu xenial-security InRelease              
+Сущ:5 http://ppa.launchpad.net/linuxgndu/sqlitebrowser/ubuntu xenial InRelease 
+Сущ:6 https://dl.google.com/linux/chrome/deb stable InRelease       
+Чтение списков пакетов… Готово
+jija@jija-VirtualBox:~$ sudo apt-get install git
+Чтение списков пакетов… Готово
+Построение дерева зависимостей       
+Чтение информации о состоянии… Готово
+Будут установлены следующие дополнительные пакеты:
+  git-man liberror-perl
+Предлагаемые пакеты:
+  git-daemon-run | git-daemon-sysvinit git-doc git-el git-email git-gui gitk
+  gitweb git-arch git-cvs git-mediawiki git-svn
+Следующие НОВЫЕ пакеты будут установлены:
+  git git-man liberror-perl
+Обновлено 0 пакетов, установлено 3 новых пакетов, для удаления отмечено 0 пакетов, и 41 пакетов не обновлено.
+Необходимо скачать 3 939 kB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 25,6 MB.
+Хотите продолжить? [Д/н] y
+Пол:1 http://ru.archive.ubuntu.com/ubuntu xenial/main amd64 liberror-perl all 0.17-1.2 [19,6 kB]
+Пол:2 http://ru.archive.ubuntu.com/ubuntu xenial-updates/main amd64 git-man all 1:2.7.4-0ubuntu1.10 [737 kB]
+Пол:3 http://ru.archive.ubuntu.com/ubuntu xenial-updates/main amd64 git amd64 1:2.7.4-0ubuntu1.10 [3 183 kB]
+Получено 3 939 kB за 0с (7 695 kB/s)
+Выбор ранее не выбранного пакета liberror-perl.
+(Чтение базы данных … на данный момент установлено 216159 файлов и каталогов.)
+Подготовка к распаковке …/liberror-perl_0.17-1.2_all.deb …
+Распаковывается liberror-perl (0.17-1.2) …
+Выбор ранее не выбранного пакета git-man.
+Подготовка к распаковке …/git-man_1%3a2.7.4-0ubuntu1.10_all.deb …
+Распаковывается git-man (1:2.7.4-0ubuntu1.10) …
+Выбор ранее не выбранного пакета git.
+Подготовка к распаковке …/git_1%3a2.7.4-0ubuntu1.10_amd64.deb …
+Распаковывается git (1:2.7.4-0ubuntu1.10) …
+Обрабатываются триггеры для man-db (2.7.5-1) …
+Настраивается пакет liberror-perl (0.17-1.2) …
+Настраивается пакет git-man (1:2.7.4-0ubuntu1.10) …
+Настраивается пакет git (1:2.7.4-0ubuntu1.10) …
+jija@jija-VirtualBox:~$ git config
+использование: git config [<опции>]
+
+Размещение файла конфигурации
+    --global              использовать глобальный файл конфигурации
+    --system              использовать системный файл конфигурации
+    --local               использовать файл конфигурации репозитория
+    -f, --file <файл>     использовать указанный файл конфигурации
+    --blob <идент-двоичн-объекта>
+                          прочитать настройки из указанного двоичного объекта
+
+Действие
+    --get                 получить значение: имя [шаблон-значений]
+    --get-all             получить все значения: ключ [шаблон-значений]
+    --get-regexp          получить значения по шаблону: шаблон-имен [шаблон-значений]
+    --get-urlmatch        получить значение, специфичное для URL: раздел[.переменная] URL
+    --replace-all         заменить все соответствующие переменные: имя значение [шаблон-значений]
+    --add                 добавить новую переменную: имя значение
+    --unset               удалить переменную: имя [шаблон-значений]
+    --unset-all           удалить все совпадающие: имя [шаблон-значений]
+    --rename-section      переименовать раздел: старое-имя новое-имя
+    --remove-section      удалить раздел: имя
+    -l, --list            показать весь список
+    -e, --edit            открыть в редакторе
+    --get-color           найти настроенный цвет: раздел [по-умолчанию]
+    --get-colorbool       проверить, существует ли настроенный цвет: раздел [stdout-есть-tty]
+
+Тип
+    --bool                значение — это «true» (правда) или «false» (ложь)
+    --int                 значение — это десятичное число
+    --bool-or-int         значение — это --bool или --int
+    --path                значение — это путь (к файлу или каталогу)
+
+Другое
+    -z, --null            завершать значения НУЛЕВЫМ байтом
+    --name-only           показывать только имена переменных
+    --includes            учитывать директивы include (включения файлов) при запросе
+
+jija@jija-VirtualBox:~$ git config --global user.name "Vlad"
+jija@jija-VirtualBox:~$ git config --global user.email "bmyvalentine@mail.ru"
+jija@jija-VirtualBox:~$ git config --list
+user.name=Vlad
+user.email=bmyvalentine@mail.ru
+//исправление ошибки
+jija@jija-VirtualBox:~$ git config --global user.name "Груздев Влад"
+jija@jija-VirtualBox:~$ git config --list
+user.name=Груздев Влад
+user.email=bmyvalentine@mail.ru
+//исправление ошибки
+--------------------------------------------------------------------------------------------------
+ZADANIE 1
+
+jija@jija-VirtualBox:~$ mkdir ~/first_repo
+jija@jija-VirtualBox:~$ git init ~/first_repo
+Инициализирован пустой репозиторий Git в /home/jija/first_repo/.git/
+
+--------------------------------------------------------------------------------------------------
+ZADANIE 3
+
+jija@jija-VirtualBox:~$ cd /home/jija/first_repo
+jija@jija-VirtualBox:~/first_repo$ git remote add first_repo https://github.com/Rock4823/central
+jija@jija-VirtualBox:~/first_repo$ git remote add first_repo https://github.com/Rock4823/central
+fatal: внешний репозиторий first_repo уже существует
+
+--------------------------------------------------------------------------------------------------
+ZADANIE 4
+jija@jija-VirtualBox:~/first_repo$ nano task1.1
+jija@jija-VirtualBox:~/first_repo$ git status
+На ветке master
+
+Начальный коммит
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	task1.1
+
+ничего не добавлено в коммит, но есть неотслеживаемые файлы (используйте «git add», чтобы отслеживать их)
+
+jija@jija-VirtualBox:~/first_repo$ git add task1.1
+jija@jija-VirtualBox:~/first_repo$ git status
+На ветке master
+
+Начальный коммит
+
+Изменения, которые будут включены в коммит:
+  (используйте «git rm --cached <файл>…», чтобы убрать из индекса)
+
+	новый файл:    task1.1
+
+jija@jija-VirtualBox:~/first_repo$ touch .gitignore
+jija@jija-VirtualBox:~/first_repo$ git status
+На ветке master
+
+Начальный коммит
+
+Изменения, которые будут включены в коммит:
+  (используйте «git rm --cached <файл>…», чтобы убрать из индекса)
+
+	новый файл:    task1.1
+        
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	.gitignore
+
+ничего не добавлено в коммит, но есть неотслеживаемые файлы (используйте «git add», чтобы отслеживать их)
+
+jija@jija-VirtualBox:~/first_repo$ gedit .gitignore (задаю исключение для файла)
+jija@jija-VirtualBox:~/first_repo$ git add .gitignore
+jija@jija-VirtualBox:~/first_repo$ git status
+На ветке master
+
+Начальный коммит
+
+Изменения, которые будут включены в коммит:
+  (используйте «git rm --cached <файл>…», чтобы убрать из индекса)
+
+	новый файл:    task1.1
+        новый файл:    .gitignore
+  
+!!!на данном этапе при внесении файла task1.1 в .gitignore, он не прекращал появляться у меня при вызове команды git status
+
+jija@jija-VirtualBox:~/first_repo$ git rm --cached task1.1
+rm 'task1.1'
+jija@jija-VirtualBox:~/first_repo$ git status
+На ветке master
+
+Начальный коммит
+
+Изменения, которые будут включены в коммит:
+  (используйте «git rm --cached <файл>…», чтобы убрать из индекса)
+
+	новый файл:    .gitignore
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	task1.1
+
+jija@jija-VirtualBox:~/first_repo$ git reset task1.1
+jija@jija-VirtualBox:~/first_repo$ git status
+На ветке master
+
+Начальный коммит
+
+Изменения, которые будут включены в коммит:
+  (используйте «git rm --cached <файл>…», чтобы убрать из индекса)
+
+	новый файл:    .gitignore
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	task1.1
+
+jija@jija-VirtualBox:~/first_repo$ git commit
+[master (корневой коммит) 880bbfe] Добавил в игнор файл task1.1
+ 1 file changed, 4 insertions(+)
+ create mode 100644 .gitignore
+jija@jija-VirtualBox:~/first_repo$ git status
+На ветке master
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	task1.1
+
+ничего не добавлено в коммит, но есть неотслеживаемые файлы (используйте «git add», чтобы отслеживать их)
+
+!!!После использования команд git rm и reset c последующим коммитом файла .gitignore файл task 1.1 всё равно оставался неотслеживаемым, а не игнорируемым!!!
+
+jija@jija-VirtualBox:~/first_repo$ gedit .gitignore
+jija@jija-VirtualBox:~/first_repo$ git status
+На ветке master
+Изменения, которые не в индексе для коммита:
+  (используйте «git add <файл>…», чтобы добавить файл в индекс)
+  (используйте «git checkout -- <файл>…», чтобы отменить изменения
+   в рабочем каталоге)
+
+	изменено:      .gitignore
+
+нет изменений добавленных для коммита
+(используйте «git add» и/или «git commit -a»)
+jija@jija-VirtualBox:~/first_repo$ git status
+На ветке master
+Изменения, которые не в индексе для коммита:
+  (используйте «git add <файл>…», чтобы добавить файл в индекс)
+  (используйте «git checkout -- <файл>…», чтобы отменить изменения
+   в рабочем каталоге)
+
+	изменено:      .gitignore
+
+нет изменений добавленных для коммита
+(используйте «git add» и/или «git commit -a»)
+jija@jija-VirtualBox:~/first_repo$ git add .gitignore
+jija@jija-VirtualBox:~/first_repo$ git status
+На ветке master
+Изменения, которые будут включены в коммит:
+  (используйте «git reset HEAD <файл>…», чтобы убрать из индекса)
+
+	изменено:      .gitignore
+
+!!!Отредактировал содержимое файла .gitignore, правильно задав исключение. Результат - отсутствие файла task1.1 при вызове команды git status, однако в репозитории он присутствует.
+--------------------------------------------------------------------------------------------------

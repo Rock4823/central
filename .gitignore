@@ -1,4 +1,4 @@
 #Lines starting with `#` are comments.
 
-#Ignore files called 'task1.1.txt'
-task1.1.txt
+#Ignore files called 'task1.1'
+task1.1
